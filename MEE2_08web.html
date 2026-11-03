@@ -7756,27 +7756,27 @@ $$S_i = \frac{h}{3}\left(f(x_{2i-2}) + 4f(x_{2i-1}) + f(x_{2i})\right)$$</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="%E6%95%B0%E5%80%A4%E7%A9%8D%E5%88%86%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E3%81%AE%E5%B9%BE%E4%BD%95%E5%AD%A6%E7%9A%84%E6%AF%94%E8%BC%83">数値積分アルゴリズムの幾何学的比較<a class="anchor-link" href="#%E6%95%B0%E5%80%A4%E7%A9%8D%E5%88%86%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E3%81%AE%E5%B9%BE%E4%BD%95%E5%AD%A6%E7%9A%84%E6%AF%94%E8%BC%83">¶</a></h3><p>数値積分は、積分区間 $[a, b]$ を細かい小区間に分割し、各小区間上で関数 $f(x)$ を多項式補間して面積を合計する手法です。</p>
-<table>
+<table style="width: 100%; max-width: 850px; border-collapse: collapse; margin: 1.5em auto 1.5em 0;">
 <thead>
-<tr>
-<th style="text-align:left"><span style="white-space: nowrap;">手法</span></th>
-<th style="text-align:left"><span style="white-space: nowrap;">局所補間多項式</span></th>
-<th style="text-align:center">1区間の面積式</th>
-<th style="text-align:center"><span style="white-space: nowrap;">大域打ち切り誤差</span></th>
+<tr style="border-bottom: 2px solid #555; background-color: #f2f4f8;">
+<th style="padding: 10px 16px; text-align: left; white-space: nowrap; width: 16%;">手法</th>
+<th style="padding: 10px 16px; text-align: left; white-space: nowrap; width: 22%;">局所補間多項式</th>
+<th style="padding: 10px 16px; text-align: center; width: 44%;">1区間の面積式</th>
+<th style="padding: 10px 16px; text-align: center; white-space: nowrap; width: 18%;">大域打ち切り誤差</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left"><span style="white-space: nowrap;"><strong>台形法</strong></span></td>
-<td style="text-align:left"><span style="white-space: nowrap;">1次式（直線）</span></td>
-<td style="text-align:center">$S_i = \frac{h}{2}(f(x_{i-1}) + f(x_i))$</td>
-<td style="text-align:center">$O(h^2)$</td>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 12px 16px; font-weight: bold; white-space: nowrap;">台形法</td>
+<td style="padding: 12px 16px; white-space: nowrap;">1次式（直線）</td>
+<td style="padding: 12px 16px; text-align: center;">$S_i = \frac{h}{2}(f(x_{i-1}) + f(x_i))$</td>
+<td style="padding: 12px 16px; text-align: center;">$O(h^2)$</td>
 </tr>
-<tr>
-<td style="text-align:left"><span style="white-space: nowrap;"><strong>シンプソン法</strong></span></td>
-<td style="text-align:left"><span style="white-space: nowrap;">2次式（放物線）</span></td>
-<td style="text-align:center">$S_k = \frac{h}{3}(f(x_{2k-2}) + 4f(x_{2k-1}) + f(x_{2k}))$</td>
-<td style="text-align:center">$O(h^4)$</td>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 12px 16px; font-weight: bold; white-space: nowrap;">シンプソン法</td>
+<td style="padding: 12px 16px; white-space: nowrap;">2次式（放物線）</td>
+<td style="padding: 12px 16px; text-align: center;">$S_k = \frac{h}{3}(f(x_{2k-2}) + 4f(x_{2k-1}) + f(x_{2k}))$</td>
+<td style="padding: 12px 16px; text-align: center;">$O(h^4)$</td>
 </tr>
 </tbody>
 </table>
