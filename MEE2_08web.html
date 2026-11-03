@@ -7539,8 +7539,8 @@ $</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%E6%BC%94%E7%BF%92-11.1%EF%BC%88%E5%8F%B0%E5%BD%A2%E6%B3%95%E3%81%AE%E5%A4%A7%E5%9F%9F%E8%AA%A4%E5%B7%AE%E3%81%A8%E5%8F%8E%E6%9D%9F%E6%AC%A1%E6%95%B0%E3%81%AE%E7%A2%BA%E8%AA%8D%EF%BC%89">演習 11.1（台形法の大域誤差と収束次数の確認）<a class="anchor-link" href="#%E6%BC%94%E7%BF%92-11.1%EF%BC%88%E5%8F%B0%E5%BD%A2%E6%B3%95%E3%81%AE%E5%A4%A7%E5%9F%9F%E8%AA%A4%E5%B7%AE%E3%81%A8%E5%8F%8E%E6%9D%9F%E6%AC%A1%E6%95%B0%E3%81%AE%E7%A2%BA%E8%AA%8D%EF%BC%89">¶</a></h3><p>定積分 $\displaystyle{I = \int_1^2 \frac{2}{x^2} dx}$ の理論値は $I = \left[ -\frac{2}{x} \right]_1^2 = -1 - (-2) = 1.0$ です。</p>
-<p>台形法の大域打ち切り誤差は理論上 $O(h^2)$（$h$ は刻み幅）であることが知られており、<strong>分割数 $n$ を 2 倍（$h$ を $1/2$）にすると、誤差は約 $1/4$（$0.25$ 倍）に減少する</strong>はずです。</p>
+<h3 id="%E6%BC%94%E7%BF%92-11.1%EF%BC%88%E5%8F%B0%E5%BD%A2%E6%B3%95%E3%81%AE%E8%AA%A4%E5%B7%AE%E3%81%A8%E5%8F%8E%E6%9D%9F%E6%AC%A1%E6%95%B0%E3%81%AE%E7%A2%BA%E8%AA%8D%EF%BC%89">演習 11.1（台形法の誤差と収束次数の確認）<a class="anchor-link" href="#%E6%BC%94%E7%BF%92-11.1%EF%BC%88%E5%8F%B0%E5%BD%A2%E6%B3%95%E3%81%AE%E8%AA%A4%E5%B7%AE%E3%81%A8%E5%8F%8E%E6%9D%9F%E6%AC%A1%E6%95%B0%E3%81%AE%E7%A2%BA%E8%AA%8D%EF%BC%89">¶</a></h3><p>定積分 $\displaystyle{I = \int_1^2 \frac{2}{x^2} dx}$ の理論値は $I = \left[ -\frac{2}{x} \right]_1^2 = -1 - (-2) = 1.0$ です。</p>
+<p>台形法の打ち切り誤差は理論上 $O(h^2)$（$h$ は刻み幅）であることが知られており、<strong>分割数 $n$ を 2 倍（$h$ を $1/2$）にすると、誤差は約 $1/4$（$0.25$ 倍）に減少する</strong>はずです。</p>
 <p>分割数 $n \in [10, 20, 40, 80, 160]$ に対する台形法の近似値を求め、理論解（1.0）との絶対誤差 $E_n = |S_n - 1.0|$、および直前の誤差との比率 $\frac{E_{n}}{E_{n/2}}$ を計算して表形式で出力しなさい。</p>
 <p>※ヒント：直前のセルで定義した <code>trapezoidal(a, b, n)</code> 関数をループ内で呼び出して利用しなさい。</p>
 </div>
@@ -7759,23 +7759,23 @@ $$S_i = \frac{h}{3}\left(f(x_{2i-2}) + 4f(x_{2i-1}) + f(x_{2i})\right)$$</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">手法</th>
-<th style="text-align:left">局所補間多項式</th>
-<th style="text-align:left">1区間の面積式</th>
-<th style="text-align:center">大域打ち切り誤差</th>
+<th style="text-align:left"><span style="white-space: nowrap;">手法</span></th>
+<th style="text-align:left"><span style="white-space: nowrap;">局所補間多項式</span></th>
+<th style="text-align:center">1区間の面積式</th>
+<th style="text-align:center"><span style="white-space: nowrap;">大域打ち切り誤差</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><strong>台形法</strong></td>
-<td style="text-align:left">1次式（直線）</td>
-<td style="text-align:left">$S_i = \frac{h}{2}(f(x_{i-1}) + f(x_i))$</td>
+<td style="text-align:left"><span style="white-space: nowrap;"><strong>台形法</strong></span></td>
+<td style="text-align:left"><span style="white-space: nowrap;">1次式（直線）</span></td>
+<td style="text-align:center">$S_i = \frac{h}{2}(f(x_{i-1}) + f(x_i))$</td>
 <td style="text-align:center">$O(h^2)$</td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>シンプソン法</strong></td>
-<td style="text-align:left">2次式（放物線）</td>
-<td style="text-align:left">$S_k = \frac{h}{3}(f(x_{2k-2}) + 4f(x_{2k-1}) + f(x_{2k}))$</td>
+<td style="text-align:left"><span style="white-space: nowrap;"><strong>シンプソン法</strong></span></td>
+<td style="text-align:left"><span style="white-space: nowrap;">2次式（放物線）</span></td>
+<td style="text-align:center">$S_k = \frac{h}{3}(f(x_{2k-2}) + 4f(x_{2k-1}) + f(x_{2k}))$</td>
 <td style="text-align:center">$O(h^4)$</td>
 </tr>
 </tbody>
@@ -7875,7 +7875,7 @@ $$I \approx \frac{h}{3} \left[ f(a) + f(b) + 4 \sum_{i=1}^{n} f(a + (2i-1)h) + 2
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%E6%BC%94%E7%BF%92-11.2%EF%BC%88%E3%82%B7%E3%83%B3%E3%83%97%E3%82%BD%E3%83%B3%E6%B3%95%E3%81%AE%E4%BB%A3%E6%95%B0%E7%B2%BE%E5%BA%A6%E3%81%A8%E5%AF%BE%E7%A7%B0%E6%80%A7%E3%81%AE%E5%AE%9F%E9%A8%93%EF%BC%89">演習 11.2（シンプソン法の代数精度と対称性の実験）<a class="anchor-link" href="#%E6%BC%94%E7%BF%92-11.2%EF%BC%88%E3%82%B7%E3%83%B3%E3%83%97%E3%82%BD%E3%83%B3%E6%B3%95%E3%81%AE%E4%BB%A3%E6%95%B0%E7%B2%BE%E5%BA%A6%E3%81%A8%E5%AF%BE%E7%A7%B0%E6%80%A7%E3%81%AE%E5%AE%9F%E9%A8%93%EF%BC%89">¶</a></h3><p>シンプソン法は各区間を「2次関数（放物線）」で近似していますが、実は<strong>奇関数的な対称性により、3次多項式に対しても厳密解（誤差 0）を与える</strong>という非常に強力な性質（代数精度 3）を持っています。</p>
+<h3 id="%E6%BC%94%E7%BF%92-11.2%EF%BC%88%E3%82%B7%E3%83%B3%E3%83%97%E3%82%BD%E3%83%B3%E6%B3%95%E3%81%AE%E7%B2%BE%E5%BA%A6%E3%81%A8%E5%AF%BE%E7%A7%B0%E6%80%A7%E3%81%AE%E5%AE%9F%E9%A8%93%EF%BC%89">演習 11.2（シンプソン法の精度と対称性の実験）<a class="anchor-link" href="#%E6%BC%94%E7%BF%92-11.2%EF%BC%88%E3%82%B7%E3%83%B3%E3%83%97%E3%82%BD%E3%83%B3%E6%B3%95%E3%81%AE%E7%B2%BE%E5%BA%A6%E3%81%A8%E5%AF%BE%E7%A7%B0%E6%80%A7%E3%81%AE%E5%AE%9F%E9%A8%93%EF%BC%89">¶</a></h3><p>シンプソン法は各区間を「2次関数（放物線）」で近似していますが、実は<strong>奇関数的な対称性により、3次多項式に対しても厳密解（誤差 0）を与える</strong>という非常に強力な性質（代数精度 3）を持っています。</p>
 <p>定積分 $\displaystyle{\int_0^2 x^3 dx = \left[ \frac{x^4}{4} \right]_0^2 = 4.0}$ について、問題 1 で作成した <code>simpson</code> 関数を用い、<strong>たったの $n=1$（全区間数 2、評価点は $x=0, 1, 2$ の 3 点のみ）</strong> で計算しなさい。
 また、台形法 <code>trapezoidal(0, 2, 2)</code> の結果とも比較し、結果を観察しなさい。</p>
 </div>
@@ -7886,10 +7886,10 @@ $$I \approx \frac{h}{3} \left[ f(a) + f(b) + 4 \sum_{i=1}^{n} f(a + (2i-1)h) + 2
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 演習 11.2：シンプソン法の代数精度実験（雛形）</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 演習 11.2：シンプソン法の精度実験（雛形）</span>
 
 
 <span class="c1"># 対象関数 f(x) = x^3</span>
@@ -18684,7 +18684,7 @@ $$\int_0^1 \int_0^1 (x + 2y) \, dy dx = \int_0^1 \left[ xy + y^2 \right]_0^1 dx 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -18716,7 +18716,7 @@ $$\int_0^1 \int_0^1 (x + 2y) \, dy dx = \int_0^1 \left[ xy + y^2 \right]_0^1 dx 
     
     <span class="c1"># 2. x 方向の台形公式: h * ((F[0] + F[n])/2 + sum(F[i]))</span>
     <span class="n">tra2</span> <span class="o">=</span> <span class="p">(</span><span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="o">/</span> <span class="mf">2.0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>  <span class="c1"># 1 から n-1 までの内部点を加算（バグ修正）</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>  <span class="c1"># 1 から n-1 までの内部点を加算</span>
         <span class="n">tra2</span> <span class="o">+=</span> <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="n">tra2</span> <span class="o">*=</span> <span class="n">h</span>
     
@@ -18755,18 +18755,6 @@ $$\int_0^1 \int_0^1 (x + 2y) \, dy dx = \int_0^1 \left[ xy + y^2 \right]_0^1 dx 
 計算結果: 54.00002633 (理論値: 54)
 </pre>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E5%95%8F%E9%A1%8C">レポート問題<a class="anchor-link" href="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E5%95%8F%E9%A1%8C">¶</a></h3><p>上記のプログラムを参考に重積分$\displaystyle{\int_1^2 \int_{2-x}^{x^2}(8x^2+4y)dydx(=54)}$を計算するためのプログラムをシンプソンの公式を用いて作成しなさい（ライブラリを使わず、自分でアルゴリズムを書くこと）．
-<strong>〆切：11/05までにGoogle Classroomでjupyter notebook形式「id_学籍番号_06.ipynb」形式で送ること</strong></p>
 </div>
 </div>
 </div>
